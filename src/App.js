@@ -1,9 +1,8 @@
-
+import Phonebook from './phonebook/Phonebook';
 
 function App() {
   return (
-    <div className="App">      
-    </div>
+    <Phonebook/>
   );
 }
 
