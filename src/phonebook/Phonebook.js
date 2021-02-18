@@ -18,20 +18,7 @@ class Phonebook extends Component {
       error: false,
       sucess: false,
     };
-   componentDidUpdate(prevProps, prevState) {
-     if (prevState.contacts !== this.state.contacts) {
-       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-      
-    }
-  }
-  componentDidMount() {    
-    const localItems = localStorage.getItem('contacts');      
-      const parcedLocalItems = JSON.parse(localItems);
-      if (parcedLocalItems) {
-      this.setState({ contacts: parcedLocalItems });
-    }
-    
-  }
+  
   onInputChange = evt => {    
     this.setState({ [evt.target.name]: evt.target.value });
     };    
@@ -53,13 +40,7 @@ class Phonebook extends Component {
     }
    
     this.props.onAddContact(this.state.name, this.state.number);
-    };
-    
- 
-
- 
-
- 
+  };
   
   render() {  
     const { error, sucess } = this.state;    
